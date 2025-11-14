@@ -2,7 +2,7 @@ import { useState, useEffect, useRef } from "react";
 import { Link } from "react-router-dom";
 import Header from "../components/Header";
 
-const APIURL = "https://restcountries.com/v3.1/all";
+const APIURL = "https://restcountries.com/v3.1/independent";
 
 function Main() {
 	const [countries, setCountries] = useState([]);
@@ -22,7 +22,7 @@ function Main() {
 	async function fetchByRegion(URL, target) {
 		const resp = await fetch(URL);
 		const data = await resp.json();
-    console.log(data);
+		console.log(data);
 		setCountries(data);
 		filterRegion.current = target;
 	}
